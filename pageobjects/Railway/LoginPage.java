@@ -4,11 +4,13 @@ import Common.Utilites;
 
 import java.time.Duration;
 
+//import javax.swing.text.Utilities;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import Constant.Constant;
 
-import org.openqa.selenium.support.ui.ExpectedConditions;
+//import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage extends GeneralPage {
@@ -36,10 +38,14 @@ public class LoginPage extends GeneralPage {
 	public WebElement getLbLoginErrorMsg() {
 		return Constant.WEBDRIVER.findElement(_lbLoginErrorMsg);
 	}
-	//methods
 	
+	//methods
 	public HomePage login(String username, String password) {
+		Utilites.waitForVisible(_txtUsername);
+		Utilites.scrollToElement(getTxtUsrename());
 		// Sub login credentials
+		cleanPasswordBox();
+		cleanUernameBox();
 		this.getTxtUsrename().sendKeys(username);
 		this.getTxtPassword().sendKeys(password);
 		this.getBtnLogin().click();
@@ -47,9 +53,20 @@ public class LoginPage extends GeneralPage {
 		return new HomePage();
 	}
 	
+	public void cleanUernameBox() {
+		getTxtUsrename().clear();
+	}
+	
+	public void cleanPasswordBox() {
+		getTxtPassword().clear();
+	}
+	
 	public String getErrorMessage() {
-		this.waitForVisible(_lbLoginErrorMsg);
+		Utilites.waitForVisible(_lbLoginErrorMsg);
 		return getLbLoginErrorMsg().getAttribute("textContent");
 	}
+	
+
+
 	
 }
