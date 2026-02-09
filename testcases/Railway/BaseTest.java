@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeMethod;
 
 import Constant.Constant;
 
-public class test {
+public class BaseTest {
 	@BeforeMethod
 	public void beforeMethod() {
 		System.out.println("Pre-condition");
@@ -19,6 +19,6 @@ public class test {
 	public void afterMethod() {
 		System.out.println("Post-condition");
 		
-		Constant.WEBDRIVER.quit();
+//		Constant.WEBDRIVER.quit();
 	}
 }

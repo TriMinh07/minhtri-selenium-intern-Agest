@@ -1,6 +1,6 @@
 package Railway;
 
-import Common.Utilites;
+import Common.Utilities;
 
 import java.time.Duration;
 
@@ -41,8 +41,8 @@ public class LoginPage extends GeneralPage {
 	
 	//methods
 	public HomePage login(String username, String password) {
-		Utilites.waitForVisible(_txtUsername);
-		Utilites.scrollToElement(getTxtUsrename());
+		Utilities.waitForVisible(_txtUsername);
+		Utilities.scrollToElement(getTxtUsrename());
 		// Sub login credentials
 		cleanPasswordBox();
 		cleanUernameBox();
@@ -62,7 +62,7 @@ public class LoginPage extends GeneralPage {
 	}
 	
 	public String getErrorMessage() {
-		Utilites.waitForVisible(_lbLoginErrorMsg);
+		Utilities.waitForVisible(_lbLoginErrorMsg);
 		return getLbLoginErrorMsg().getAttribute("textContent");
 	}
 	
