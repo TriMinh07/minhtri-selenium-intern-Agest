@@ -11,15 +11,15 @@ import org.openqa.selenium.WebElement;
 //import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Constant.Constant;
+import Element.RegistorError;
 import Menu.MenuRailway;
 
 public class GeneralPage {
 	
 	//locators
 	private final By lbWelcomeMesssage = By.xpath("//div[@class='account']/strong");
+	
 	private final String tabMenuString ="//div[@id='menu']//a[normalize-space()='%s']";
-	
-	
 
 	//elements
 	
@@ -40,4 +40,8 @@ public class GeneralPage {
 		Utilities.waitForVisible(lbWelcomeMesssage);
 		return this.getlbWelcomeMesssage().getAttribute("textContent");
 	}
+	
+	public void clickToElement(String locator) {
+        Constant.WEBDRIVER.findElement(By.xpath(locator)).click();
+    }
 }

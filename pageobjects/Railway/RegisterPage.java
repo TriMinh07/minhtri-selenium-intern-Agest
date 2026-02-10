@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 
 import Account.Account;
 import Constant.Constant;
+import Element.RegistorError;
 import Common.Utilities;
 
 public class RegisterPage extends GeneralPage {
@@ -17,18 +18,13 @@ public class RegisterPage extends GeneralPage {
 	private final By _txtConfirmPassword = By.xpath("//input[@name='confirmPassword']");
 	private final By _txtPid = By.xpath("//input[@name='pid']");
 	private final By _btnSubmitRegister = By.xpath("//input[@value='Register']");
-	private final By _lbErrorMsg = By.xpath("//p[@class='message error']");
 	private final By lbErrorMessageBy = By.xpath("//p[@class='message error']");	
 
-	private final By lbConfirmPassWordErrorMsg = By.xpath("//label[@for='confirmPassword'][ @class='validation-error']");
-	private final By lbPassWordErrorMsg = By.xpath("//label[@for='password'][ @class='validation-error']");
-	private final By lbEmailErrorMsg = By.xpath("//label[@for='email'][ @class='validation-error']");
-	private final By lbPidErrorMsg = By.xpath("//label[@for='pid'][ @class='validation-error']");
+	private final String lbErrorMsg = ("//label[@for='%s'][ @class='validation-error']");
+	
 	//elements
 	
-	public String getErrorMessage() {
-		return Utilities.getText(this.lbErrorMessageBy);
-	}
+
 	
 	public WebElement getTxtEmail () {
 		return Constant.WEBDRIVER.findElement(_txtEmail);
@@ -51,6 +47,10 @@ public class RegisterPage extends GeneralPage {
 	}
 	//methods
 	
+	public String getErrorMessage() {
+		return Utilities.getText(this.lbErrorMessageBy);
+	}
+	
 	public HomePage registerByAccount(Account account) {
 		Utilities.type(_txtEmail, account.getEmail());
 		Utilities.type(_txtPassword, account.getPassword());
@@ -58,5 +58,13 @@ public class RegisterPage extends GeneralPage {
 		Utilities.type(_txtPid, account.getPid());
 		Utilities.click(_btnSubmitRegister);
 		return new HomePage();
+	}
+	
+	public By getErrorLocator(RegistorError field) {
+	    return By.xpath(String.format( this.lbErrorMsg, field.getValue()));
+	}
+	
+	public String getErrorMessageOfField(RegistorError field) {
+	    return Constant.WEBDRIVER.findElement(getErrorLocator(field)).getText();
 	}
 }
