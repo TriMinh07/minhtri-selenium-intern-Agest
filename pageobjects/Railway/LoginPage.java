@@ -13,6 +13,8 @@ import Constant.Constant;
 //import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import Account.Account;
+
 public class LoginPage extends GeneralPage {
 	
 	//locators
@@ -20,6 +22,8 @@ public class LoginPage extends GeneralPage {
 	private final By _txtPassword = By.xpath("//input[@id='password']");
 	private final By _btnLogin = By.xpath("//input[@value='login']");
 	private final By _lbLoginErrorMsg = By.xpath("//p[@class='message error LoginForm']");
+	
+	private final By txtLinkResetPass = By.xpath("//a[@href='/Account/ForgotPassword.cshtml']");
 	//wait
 	private final WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Duration.ofSeconds(10));
 	//elements
@@ -40,14 +44,14 @@ public class LoginPage extends GeneralPage {
 	}
 	
 	//methods
-	public HomePage login(String username, String password) {
+	public HomePage login(Account account) {
 		Utilities.waitForVisible(_txtUsername);
 		Utilities.scrollToElement(getTxtUsrename());
 		// Sub login credentials
 		cleanPasswordBox();
 		cleanUernameBox();
-		this.getTxtUsrename().sendKeys(username);
-		this.getTxtPassword().sendKeys(password);
+		this.getTxtUsrename().sendKeys(account.getEmail());
+		this.getTxtPassword().sendKeys(account.getPassword());
 		this.getBtnLogin().click();
 		
 		return new HomePage();
@@ -65,6 +69,12 @@ public class LoginPage extends GeneralPage {
 		Utilities.waitForVisible(_lbLoginErrorMsg);
 		return getLbLoginErrorMsg().getAttribute("textContent");
 	}
+	
+	public HomePage clickResetPassLinkTxt() {
+		Utilities.click(txtLinkResetPass);
+		return new HomePage();
+	}
+	
 	
 
 

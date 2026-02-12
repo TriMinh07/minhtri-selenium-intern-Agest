@@ -1,50 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="4" total="5" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-10T13:19:18 ICT" name="Default suite" finished-at="2026-02-10T13:19:24 ICT" duration-ms="5974">
+  <suite started-at="2026-02-12T09:59:57 ICT" name="Default suite" finished-at="2026-02-12T10:00:44 ICT" duration-ms="47325">
     <groups>
     </groups>
-    <test started-at="2026-02-10T13:19:18 ICT" name="Default test" finished-at="2026-02-10T13:19:24 ICT" duration-ms="5974">
+    <test started-at="2026-02-12T09:59:57 ICT" name="Default test" finished-at="2026-02-12T10:00:44 ICT" duration-ms="47325">
       <class name="Railway.Register">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Railway.Register@45752059]" started-at="2026-02-10T13:19:18 ICT" name="beforeMethod" finished-at="2026-02-10T13:19:19 ICT" duration-ms="1336" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Railway.Register@40a4337a]" started-at="2026-02-12T09:59:57 ICT" name="beforeMethod" finished-at="2026-02-12T09:59:58 ICT" duration-ms="1363" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC09()[pri:0, instance:Railway.Register@45752059]" started-at="2026-02-10T13:19:19 ICT" name="TC09" finished-at="2026-02-10T13:19:24 ICT" duration-ms="4607" status="FAIL">
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+        <test-method signature="TC11()[pri:0, instance:Railway.Register@40a4337a]" started-at="2026-02-12T09:59:58 ICT" name="TC11" finished-at="2026-02-12T10:00:44 ICT" duration-ms="45935" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[element click intercepted: Element <a href="/Account/Register.cshtml">...</a> is not clickable at point (415, 656). Other element would receive the click: <div style="width: 100%; color: White; font-family: &quot;Helvetica Neue&quot;, &quot;Lucida Grande&quot;, &quot;Segoe UI&quot;, Arial, Helvetica, Verdana, sans-serif; font-size: 11pt;">...</div>
-  (Session info: chrome=144.0.7559.133)
+              <![CDATA[Expected condition failed: waiting for visibility of element found by By.xpath: //td[contains(text(), 'Please confirm your account')], but... org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//td[contains(text(), 'Please confirm your account')]"}.
+(tried for 20 seconds with 500 milliseconds interval)
 Build info: version: '4.40.0', revision: 'b3333f1'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c385c6b5f3d37ac8cdcf61e532f588b3, clickElement {id=f.D8D4FADF309608F8185F03BEA27DD07F.d.FAEC3D8A43388FDE1C0BFC2642D62271.e.15}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\MINHTR~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50001}, goog:processID: 11136, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50001/devtoo..., se:cdpVersion: 144.0.7559.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (c385c6b5f3d37ac8cdcf61e532f588b3)] -> xpath: //a[text()='create an account']]
-Session ID: c385c6b5f3d37ac8cdcf61e532f588b3]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\MINHTR~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56166}, goog:processID: 34576, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56166/devtoo..., se:cdpVersion: 144.0.7559.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 62ef4f92b1e9fd49795010043c663eeb]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a href="/Account/Register.cshtml">...</a> is not clickable at point (415, 656). Other element would receive the click: <div style="width: 100%; color: White; font-family: &quot;Helvetica Neue&quot;, &quot;Lucida Grande&quot;, &quot;Segoe UI&quot;, Arial, Helvetica, Verdana, sans-serif; font-size: 11pt;">...</div>
-  (Session info: chrome=144.0.7559.133)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by By.xpath: //td[contains(text(), 'Please confirm your account')], but... org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//td[contains(text(), 'Please confirm your account')]"}.
+(tried for 20 seconds with 500 milliseconds interval)
 Build info: version: '4.40.0', revision: 'b3333f1'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c385c6b5f3d37ac8cdcf61e532f588b3, clickElement {id=f.D8D4FADF309608F8185F03BEA27DD07F.d.FAEC3D8A43388FDE1C0BFC2642D62271.e.15}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\MINHTR~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50001}, goog:processID: 11136, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50001/devtoo..., se:cdpVersion: 144.0.7559.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (c385c6b5f3d37ac8cdcf61e532f588b3)] -> xpath: //a[text()='create an account']]
-Session ID: c385c6b5f3d37ac8cdcf61e532f588b3
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-at Railway.HomePage.clickCreateAccountLink(HomePage.java:21)
-at Railway.Register.TC09(Register.java:108)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\MINHTR~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56166}, goog:processID: 34576, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56166/devtoo..., se:cdpVersion: 144.0.7559.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 62ef4f92b1e9fd49795010043c663eeb
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+at Common.Utilities.waitForVisible(Utilities.java:47)
+at Common.Utilities.clickByJS(Utilities.java:130)
+at Railway.Guerrillamail.getLinkActive(Guerrillamail.java:39)
+at Railway.Register.TC11(Register.java:226)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -73,11 +64,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC09 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.Register@45752059]" started-at="2026-02-10T13:19:24 ICT" name="afterMethod" finished-at="2026-02-10T13:19:24 ICT" duration-ms="1" status="PASS">
+        </test-method> <!-- TC11 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.Register@40a4337a]" started-at="2026-02-12T10:00:44 ICT" name="afterMethod" finished-at="2026-02-12T10:00:44 ICT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->

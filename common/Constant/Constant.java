@@ -12,8 +12,10 @@ public class Constant {
 	public static final String INVALID_PASSWORD = "minhtriminhtriminhtri";
 	//minhtri4724@gmail.com
 	public static final String PASSWORD = "12345678";
+	public static final String PID = "1123456789";
 	public static final int TIME_SYSTEMOUT = 10 ;
 	public static final String WINDOW_TAB_MAIL = "Mail";
 	public static final String WINDOW_TAB_RAILWAY = "Railway";
 	public static final String REGISTER_MESSAGE_ERROR_DUPLICAP_MAIL = "This email address is already in use.";
+	
 }

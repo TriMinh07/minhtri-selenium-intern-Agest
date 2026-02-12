@@ -47,13 +47,8 @@ public class Utilities {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
-    public static WebElement waitForClickable(By locator, int timeoutSeconds) {
-    	WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Duration.ofSeconds(timeoutSeconds));
-        return wait.until(ExpectedConditions.elementToBeClickable(locator));
-    }
-
     public static void click(By locator) {
-    	waitForVisible(locator);
+    	waitForVisible(locator, 12);
     	scrollToElement(getElement(locator));
         waitForClickable(locator);
         getElement(locator).click();
@@ -132,6 +127,7 @@ public class Utilities {
     }
     
     public static void clickByJS(By locator) {
+    	Utilities.waitForVisible(locator, 20);
     	WebElement element = getElement(locator);
     	JavascriptExecutor jsExecutor = (JavascriptExecutor) Constant.WEBDRIVER;
     	jsExecutor.executeScript("arguments[0].click();", element);
@@ -150,7 +146,7 @@ public class Utilities {
     		return new Select(selectElement).getOptions().size() > 1;
     	});
     }
-
+    
     
     public static void selectByText(Select select, String text) {
     	select.selectByVisibleText(text);
@@ -182,7 +178,6 @@ public class Utilities {
             }
         });
     }
-	
-	
-	
+    
+    
 }

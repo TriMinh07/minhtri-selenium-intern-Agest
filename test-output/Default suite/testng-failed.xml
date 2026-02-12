@@ -5,7 +5,7 @@
     <classes>
       <class name="Railway.Register">
         <methods>
-          <include name="TC09"/>
+          <include name="TC11"/>
           <include name="beforeMethod"/>
           <include name="afterMethod"/>
         </methods>

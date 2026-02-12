@@ -1,15 +1,21 @@
 package Railway;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
+import Common.Utilities;
 import Constant.Constant;
 
 public class HomePage extends GeneralPage {
 
 	//Locators
-	private final By lnkCreateAccount = By.xpath("//a[text()='create an account']");
+	private final By linkCreateAccount = By.xpath("//a[text()='create an account']");
 	
 	//elements
+
+	protected WebElement getLinkCreateAccount() {
+		return Constant.WEBDRIVER.findElement(linkCreateAccount);
+	}
 	
 	//methods
 	public HomePage open() {
@@ -17,8 +23,10 @@ public class HomePage extends GeneralPage {
 		return this;
 	}
 	
-	public void clickLinkCreateAccount() {
-		
+	public HomePage clickLinkCreateAccount() {
+		Utilities.scrollToElement(getLinkCreateAccount());
+		Constant.WEBDRIVER.findElement(linkCreateAccount).click();
+		return new HomePage();
 	}
 	
 }
