@@ -10,7 +10,7 @@ public class Constant {
 	public static final String USERNAME = "minhtri4724@gmail.com";
 	public static final String INVALID_UERNAME = "invalidtriminh4724@gmail.com";
 	public static final String INVALID_PASSWORD = "minhtriminhtriminhtri";
-	//minhtri4724@gmail.com
+
 	public static final String PASSWORD = "12345678";
 	public static final String PID = "1123456789";
 	public static final int TIME_SYSTEMOUT = 10 ;

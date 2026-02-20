@@ -2,10 +2,6 @@ package Railway;
 
 import static org.testng.Assert.assertEquals;
 
-import java.util.Random;
-
-import javax.crypto.spec.ChaCha20ParameterSpec;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -202,7 +198,7 @@ public class Register extends BaseTest {
 	
 	@Test
 	public void TC11 () {
-		System.out.println("TC10: Reset password shows error if the new password is same as current");
+		System.out.println("TC11: Reset password shows error if the new password is same as current");
 		System.out.println("Pre-condition: an actived account is existing");
 		Account account = Account.generalAccount();
 		Guerrillamail guerrillamail = new Guerrillamail();
@@ -252,9 +248,18 @@ public class Register extends BaseTest {
 		Constant.WEBDRIVER.get(linkResetPass);
 		
 		String newPassword = Common.RandomString.generateRandomString(12);
-		changePasswordPage.resetPassword(linkResetPass);
+		changePasswordPage.resetPassword(newPassword);
 		
+		String expectedErrorMsg = "Could not reset password. Please correct the errors and try again.";
+		String expectedComfirmErrorMsg = "The password confirmation did not match the new password.";
+		String actualErrorMsg = changePasswordPage.getLbErrorMsg();
+		String actualConfitmErrorMsg = changePasswordPage.getLbInvalidConfirmPassErrorMsg(); 
 		System.out.println("Error message \"Could not reset password. Please correct the errors and try again.\" displays above the form.");
+		
+		Assert.assertEquals(actualErrorMsg, expectedErrorMsg, "Error message \"Could not reset password. Please correct the errors and try again.\"is displayed");
+		
 		System.out.println("Error message \"The password confirmation did not match the new password.\" displays next to the confirm password field.");
+		
+		Assert.assertEquals(actualConfitmErrorMsg, expectedComfirmErrorMsg, "Error message \"The password confirmation did not match the new password.\" is displayed");
 	}
 }

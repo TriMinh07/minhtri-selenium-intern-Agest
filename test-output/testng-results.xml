@@ -2,40 +2,35 @@
 <testng-results ignored="4" total="5" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-12T09:59:57 ICT" name="Default suite" finished-at="2026-02-12T10:00:44 ICT" duration-ms="47325">
+  <suite started-at="2026-02-19T15:36:38 ICT" name="Default suite" finished-at="2026-02-19T15:36:48 ICT" duration-ms="9967">
     <groups>
     </groups>
-    <test started-at="2026-02-12T09:59:57 ICT" name="Default test" finished-at="2026-02-12T10:00:44 ICT" duration-ms="47325">
-      <class name="Railway.Register">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Railway.Register@40a4337a]" started-at="2026-02-12T09:59:57 ICT" name="beforeMethod" finished-at="2026-02-12T09:59:58 ICT" duration-ms="1363" status="PASS">
+    <test started-at="2026-02-19T15:36:38 ICT" name="Default test" finished-at="2026-02-19T15:36:48 ICT" duration-ms="9967">
+      <class name="Railway.BookTicket">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.BookTicket@2d1ef81a]" started-at="2026-02-19T15:36:38 ICT" name="beforeMethod" finished-at="2026-02-19T15:36:40 ICT" duration-ms="2220" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC11()[pri:0, instance:Railway.Register@40a4337a]" started-at="2026-02-12T09:59:58 ICT" name="TC11" finished-at="2026-02-12T10:00:44 ICT" duration-ms="45935" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
+        <test-method signature="TC16()[pri:0, instance:Railway.BookTicket@2d1ef81a]" started-at="2026-02-19T15:36:40 ICT" name="TC16" finished-at="2026-02-19T15:36:48 ICT" duration-ms="7700" status="FAIL">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Expected condition failed: waiting for visibility of element found by By.xpath: //td[contains(text(), 'Please confirm your account')], but... org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//td[contains(text(), 'Please confirm your account')]"}.
-(tried for 20 seconds with 500 milliseconds interval)
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\MINHTR~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56166}, goog:processID: 34576, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56166/devtoo..., se:cdpVersion: 144.0.7559.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 62ef4f92b1e9fd49795010043c663eeb]]>
+              <![CDATA[The canceled ticket is disappeared. expected [false] but found [true]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by By.xpath: //td[contains(text(), 'Please confirm your account')], but... org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//td[contains(text(), 'Please confirm your account')]"}.
-(tried for 20 seconds with 500 milliseconds interval)
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\MINHTR~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56166}, goog:processID: 34576, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56166/devtoo..., se:cdpVersion: 144.0.7559.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 62ef4f92b1e9fd49795010043c663eeb
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-at Common.Utilities.waitForVisible(Utilities.java:47)
-at Common.Utilities.clickByJS(Utilities.java:130)
-at Railway.Guerrillamail.getLinkActive(Guerrillamail.java:39)
-at Railway.Register.TC11(Register.java:226)
+              <![CDATA[java.lang.AssertionError: The canceled ticket is disappeared. expected [false] but found [true]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:1079)
+at Railway.BookTicket.TC16(BookTicket.java:242)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -64,15 +59,15 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC11 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.Register@40a4337a]" started-at="2026-02-12T10:00:44 ICT" name="afterMethod" finished-at="2026-02-12T10:00:44 ICT" duration-ms="0" status="PASS">
+        </test-method> <!-- TC16 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.BookTicket@2d1ef81a]" started-at="2026-02-19T15:36:48 ICT" name="afterMethod" finished-at="2026-02-19T15:36:48 ICT" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- Railway.Register -->
+      </class> <!-- Railway.BookTicket -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

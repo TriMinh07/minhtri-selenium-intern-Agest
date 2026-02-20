@@ -1,12 +1,9 @@
 package Railway;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 import Common.Utilities;
-import Constant.Constant;
-import Element.TicketAmount;
 import Element.TicketColumn;
 import Element.TicketDepart;
 import Element.TicketSeatType;
@@ -29,7 +26,7 @@ public class BookTicketPage extends GeneralPage {
 
 	//methods
 	
-	public BookTicketPage bookTicket(String departDate, TicketDepart departForm, TicketDepart arriveAt, TicketSeatType seatType, TicketAmount ticketAmount) {
+	public BookTicketPage bookTicket(String departDate, TicketDepart departForm, TicketDepart arriveAt, TicketSeatType seatType, String ticketAmount) {
 		
 		Utilities.scrollToElement(Utilities.getElement(seDepartDate));
 		Select selectDepartDate = new Select(Utilities.getElement(this.seDepartDate));
@@ -43,7 +40,7 @@ public class BookTicketPage extends GeneralPage {
 		selectDepartForm.selectByValue(departForm.getValue());
 		selectArriveAt.selectByValue(arriveAt.getValue());
 		selectSeatType.selectByValue(seatType.getValue());
-		selectTicketAmount.selectByValue(ticketAmount.getValue());
+		selectTicketAmount.selectByValue(ticketAmount);
 
 		Utilities.getElement(this.btnBookTicket).click();
 		
@@ -57,6 +54,31 @@ public class BookTicketPage extends GeneralPage {
 	
 	public String getSuccessfullyMsg() {
 		return Utilities.getArtribute(msgSuccessfulyBooked, "textContent");
+	}
+	
+	public String getArriveAtValue () {
+		return Utilities.getArtribute(seArriveAt, "value");
+	}
+	
+	public String getDepathFromValue () {
+		return Utilities.getArtribute(seDepartForm, "value");
+	}
+	
+	public BookTicketPage bookTicketOnTimeTable(String departDate, TicketSeatType seatType, String ticketAmount) {
+			
+			Utilities.scrollToElement(Utilities.getElement(seDepartDate));
+			Select selectDepartDate = new Select(Utilities.getElement(this.seDepartDate));
+			Select selectSeatType = new Select(Utilities.getElement(this.seSeatType));
+			Select selectTicketAmount = new Select(Utilities.getElement(this.seTicketAmount));
+			
+			System.out.println(departDate);
+			selectDepartDate.selectByContainsVisibleText(departDate);
+			selectSeatType.selectByValue(seatType.getValue());
+			selectTicketAmount.selectByValue(ticketAmount);
+	
+			Utilities.getElement(this.btnBookTicket).click();
+			
+			return new BookTicketPage();
 	}
 	
 }

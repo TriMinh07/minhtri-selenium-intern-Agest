@@ -7,6 +7,12 @@
 	<artifactId>seleniumminhtri</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>22</maven.compiler.source>
+		<maven.compiler.target>22</maven.compiler.target>
+	</properties>
 
 	<dependencies>
 		<dependency>
@@ -19,7 +25,9 @@
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>7.11.0</version>
+			<version>7.12.0</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 </project>
+

@@ -11,6 +11,11 @@ public class ChangePasswordPage extends GeneralPage {
 	private final By inputNewPassword 			= By.xpath("//input[@name='newPassword']");
 	private final By inputConfirmNewPassword	= By.xpath("//input[@name='confirmPassword']");
 	private final By btnResetPassword 			= By.xpath("//input[@value='Reset Password']");
+	
+	private final By lbErrorMsg = By.xpath("//p[@class='message error']");
+	private final By lbInvalidPassErrorMsg = By.xpath("//label[@for='currentPassword'][@class='validation-error']");
+	private final By lbInvalidCurrentErrorMsg = By.xpath("//label[@for='newPassword'][@class='validation-error']");
+	private final By lbInvalidConfirmPassErrorMsg = By.xpath("//label[@for='confirmPassword'][@class='validation-error']");
 	//elements
 	
 	//methods
@@ -28,4 +33,28 @@ public class ChangePasswordPage extends GeneralPage {
 		Utilities.click(btnResetPassword);
 		return new ChangePasswordPage();
 	}
+	
+	public ChangePasswordPage resetPassword (String newPassword, String confirmPassword) {
+		Utilities.getElement(inputNewPassword).sendKeys(newPassword);
+		Utilities.getElement(inputConfirmNewPassword).sendKeys(confirmPassword);
+		Utilities.click(btnResetPassword);
+		return new ChangePasswordPage();
+	}
+	
+	public String getLbErrorMsg () {
+		return Utilities.getArtribute(lbErrorMsg, "textContent");
+	}
+	
+	public String getLbInvalidPassErrorMsg () {
+		return Utilities.getArtribute(lbInvalidPassErrorMsg, "textContent");
+	}
+	
+	public String getLbInvalidCurrentErrorMsg () {
+		return Utilities.getArtribute(lbInvalidCurrentErrorMsg, "textContent");
+	}
+	
+	public String getLbInvalidConfirmPassErrorMsg () {
+		return Utilities.getArtribute(lbInvalidConfirmPassErrorMsg, "textContent");
+	}
+	
 }

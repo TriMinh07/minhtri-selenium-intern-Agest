@@ -19,11 +19,10 @@ public class TimeTablePage extends GeneralPage {
 	//methods
 	
 	public void clickLinkByRoute(String depart, String arrive, String action) {
+		
         String finalXpath = String.format(xpathTemplate, depart, arrive, action);
         
-        Utilities.scrollToElement(Utilities.getElement(By.xpath(finalXpath)));
-        
-        Constant.WEBDRIVER.findElement(By.xpath(finalXpath)).click();
+        Utilities.click(By.xpath(finalXpath));
     }
 	
 }

@@ -7,7 +7,7 @@ public enum TicketDepart {
     NHATRANG("3", "Nha Trang"),
     DANANG("4", "Đà Nẵng"),
     HUE("5", "Huế"),
-    QUANGNGAI("6", "Quãng Ngãi");
+    QUANGNGAI("6", "Quảng Ngãi");
     
     private final String value;
 	private final String name;

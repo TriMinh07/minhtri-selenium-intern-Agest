@@ -1,23 +1,17 @@
 package Railway;
 
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
 import Constant.Constant;
-import Element.TicketAmount;
+import Account.Account;
+import Common.UtilsDate;
+
 import Element.TicketColumn;
 import Element.TicketDepart;
 import Element.TicketSeatType;
 import Menu.MenuRailway;
-
-import static org.testng.Assert.assertEquals;
-
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-
-import org.testng.Assert;
-import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
-
-import Account.Account;
-import Common.UtilsDate;
 
 public class BookTicket extends BaseTest {
 	
@@ -50,7 +44,7 @@ public class BookTicket extends BaseTest {
 		TicketSeatType typeSeat = TicketSeatType.SOFT_BED_AIR ;
 		
 		System.out.println("7. Select \"1\" for \"Ticket amount\"");
-		TicketAmount amount = TicketAmount.ONE;
+		String amount = "1";
 		
 		System.out.println("8. Click on \"Book ticket\" button");
 //		departDate -> TicketDepart -> TicketDepart from  -> TicketSeatType  ->	TicketAmount 
@@ -58,16 +52,16 @@ public class BookTicket extends BaseTest {
 		
 		System.out.println("Message \"Ticket booked successfully!\" displays. Ticket information display correctly (Depart Date,  Depart Station,  Arrive Station,  Seat Type,  Amount)");
 		
-		SoftAssert softAssert = new SoftAssert();
+
 		
 		String actualMsg = bookTicketPage.getSuccessfullyMsg().trim();
 		String expectedMsg = "Ticket booked successfully!";
-		softAssert.assertEquals(actualMsg, expectedMsg, "successfully message is displayed");
-		softAssert.assertEquals(bookTicketPage.getCellValue(TicketColumn.DEPART_STATION), depart.getName());
-		softAssert.assertEquals(bookTicketPage.getCellValue(TicketColumn.ARRIVE_STATION), departFrom.getName());
-		softAssert.assertEquals(bookTicketPage.getCellValue(TicketColumn.SEAT_TYPE), typeSeat.getName());
-		softAssert.assertEquals(bookTicketPage.getCellValue(TicketColumn.AMOUNT), amount.getValue());
-		softAssert.assertAll();
+		Assert.assertEquals(actualMsg, expectedMsg, "successfully message is displayed");
+		Assert.assertEquals(bookTicketPage.getCellValue(TicketColumn.DEPART_STATION), depart.getName());
+		Assert.assertEquals(bookTicketPage.getCellValue(TicketColumn.ARRIVE_STATION), departFrom.getName());
+		Assert.assertEquals(bookTicketPage.getCellValue(TicketColumn.SEAT_TYPE), typeSeat.getName());
+		Assert.assertEquals(bookTicketPage.getCellValue(TicketColumn.AMOUNT), amount);
+
 	}
 	
 	@Test
@@ -99,7 +93,7 @@ public class BookTicket extends BaseTest {
 		TicketSeatType typeSeat = TicketSeatType.SOFT_SEAT_AIR ;
 		
 		System.out.println("7. Select \"5\" for \"Ticket amount\"");
-		TicketAmount amount = TicketAmount.FIVE;
+		String amount = "5";
 		
 		System.out.println("8. Click on \"Book ticket\" button");
 //		departDate -> TicketDepart -> TicketDepart from  -> TicketSeatType  ->	TicketAmount 
@@ -107,16 +101,13 @@ public class BookTicket extends BaseTest {
 		
 		System.out.println("Message \"Ticket booked successfully!\" displays. Ticket information display correctly (Depart Date,  Depart Station,  Arrive Station,  Seat Type,  Amount)");
 		
-		SoftAssert softAssert = new SoftAssert();
-		
 		String actualMsg = bookTicketPage.getSuccessfullyMsg().trim();
 		String expectedMsg = "Ticket booked successfully!";
-		softAssert.assertEquals(actualMsg, expectedMsg, "successfully message is displayed");
-		softAssert.assertEquals(bookTicketPage.getCellValue(TicketColumn.DEPART_STATION), depart.getName());
-		softAssert.assertEquals(bookTicketPage.getCellValue(TicketColumn.ARRIVE_STATION), departFrom.getName());
-		softAssert.assertEquals(bookTicketPage.getCellValue(TicketColumn.SEAT_TYPE), typeSeat.getName());
-		softAssert.assertEquals(bookTicketPage.getCellValue(TicketColumn.AMOUNT), amount.getValue());
-		softAssert.assertAll();
+		Assert.assertEquals(actualMsg, expectedMsg, "successfully message is displayed");
+		Assert.assertEquals(bookTicketPage.getCellValue(TicketColumn.DEPART_STATION), depart.getName());
+		Assert.assertEquals(bookTicketPage.getCellValue(TicketColumn.ARRIVE_STATION), departFrom.getName());
+		Assert.assertEquals(bookTicketPage.getCellValue(TicketColumn.SEAT_TYPE), typeSeat.getName());
+		Assert.assertEquals(bookTicketPage.getCellValue(TicketColumn.AMOUNT), amount);
 	}
 	
 	@Test
@@ -156,19 +147,100 @@ public class BookTicket extends BaseTest {
 		String exTitle = "Ticket price from Đà Nẵng to Sài Gòn";
 		
 		TicketPricePage ticketPrice = new TicketPricePage();
-		SoftAssert softAssert = new SoftAssert();
 		
-		softAssert.assertEquals(ticketPrice.getTableTitle().trim(), exTitle);
-		softAssert.assertEquals(ticketPrice.getCellTicketPrice(TicketSeatType.HARD_BED), exHB);
-		softAssert.assertEquals(ticketPrice.getCellTicketPrice(TicketSeatType.HARD_SEAT), exHS);
-		softAssert.assertEquals(ticketPrice.getCellTicketPrice(TicketSeatType.SOFT_BED), exSB);
-		softAssert.assertEquals(ticketPrice.getCellTicketPrice(TicketSeatType.SOFT_BED_AIR), exSBC);
-		softAssert.assertEquals(ticketPrice.getCellTicketPrice(TicketSeatType.SOFT_SEAT), exSS);
-		softAssert.assertEquals(ticketPrice.getCellTicketPrice(TicketSeatType.SOFT_SEAT_AIR), exSSC);
-		
-		softAssert.assertAll();
-		
+		Assert.assertEquals(ticketPrice.getTableTitle().trim(), exTitle);
+		Assert.assertEquals(ticketPrice.getCellTicketPrice(TicketSeatType.HARD_BED), exHB);
+		Assert.assertEquals(ticketPrice.getCellTicketPrice(TicketSeatType.HARD_SEAT), exHS);
+		Assert.assertEquals(ticketPrice.getCellTicketPrice(TicketSeatType.SOFT_BED), exSB);
+		Assert.assertEquals(ticketPrice.getCellTicketPrice(TicketSeatType.SOFT_BED_AIR), exSBC);
+		Assert.assertEquals(ticketPrice.getCellTicketPrice(TicketSeatType.SOFT_SEAT), exSS);
+		Assert.assertEquals(ticketPrice.getCellTicketPrice(TicketSeatType.SOFT_SEAT_AIR), exSSC);
 	}
 	
+	@Test
+	public void TC15 () {
+		System.out.println("User can book ticket from Timetable");
+		
+		HomePage homePage = new HomePage();
+		System.out.println("1. Navigate to QA Railway Website");
+		homePage.open();
+		
+		System.out.println("2. Login with a valid account ");
+		LoginPage loginPage = (LoginPage) homePage.navigateMenu(MenuRailway.LOGIN);
+		Account account = new Account(Constant.USERNAME, Constant.PASSWORD);
+		loginPage.login(account);
+		
+		System.out.println("3. Click on \"Timetable\" tab");
+		TimeTablePage timeTablePage = (TimeTablePage) homePage.navigateMenu(MenuRailway.TIMETABLE);
+		
+		System.out.println("4. Click on book ticket of route \"Quảng Ngãi\" to \"Huế\"");
+		String departFrom = TicketDepart.QUANGNGAI.getName();
+		String departArrive = TicketDepart.HUE.getName();
+		String action = "book ticket";
+		
+		timeTablePage.clickLinkByRoute(departFrom, departArrive, action);
+		
+		System.out.println("Verify: Book ticket form is shown with the corrected \"depart from\" and \"Arrive at\"");
+		BookTicketPage bookTicketPage = new BookTicketPage();
+		String actualOptionFrom = bookTicketPage.getDepathFromValue();
+		String actualOptionArriveAt = bookTicketPage.getArriveAtValue();
+		Assert.assertEquals(TicketDepart.QUANGNGAI.getValue(), actualOptionFrom, "corrected \"depart from\" Quảng Ngãi");
+		Assert.assertEquals(TicketDepart.HUE.getValue(), actualOptionArriveAt, "corrected \"Arrive at\" Huế");
+		
+		System.out.println("5. Select Depart date = tomorrow");
+		String Date = UtilsDate.getFutureDate(2);
+		System.out.println("6. Select Ticket amount = 5");
+		String Amount = "5";
+		System.out.println("7. Click on \"Book ticket\" button");
+
+		bookTicketPage.bookTicketOnTimeTable(Date, TicketSeatType.HARD_SEAT , Amount );
+		
+		System.out.println("Message \"Ticket booked successfully!\" displays. Ticket information display correctly (Depart Date,  Depart Station,  Arrive Station,  Seat Type,  Amount)");
+		
+		String actualMsg = bookTicketPage.getSuccessfullyMsg().trim();
+		String expectedMsg = "Ticket booked successfully!";
+		Assert.assertEquals(actualMsg, expectedMsg, "successfully message is displayed");
+		Assert.assertEquals(bookTicketPage.getCellValue(TicketColumn.DEPART_STATION), departFrom);
+		Assert.assertEquals(bookTicketPage.getCellValue(TicketColumn.ARRIVE_STATION), departArrive);
+		Assert.assertEquals(bookTicketPage.getCellValue(TicketColumn.SEAT_TYPE), TicketSeatType.HARD_SEAT.getName());
+		Assert.assertEquals(bookTicketPage.getCellValue(TicketColumn.AMOUNT), Amount);
+	}
+	
+	@Test
+	public void TC16 () {
+		System.out.println("User can book ticket from Timetable");
+		Boolean expected = false;
+		
+		HomePage homePage = new HomePage();
+		System.out.println("1. Navigate to QA Railway Website");
+		homePage.open();
+		
+		System.out.println("2. Login with a valid account ");
+		LoginPage loginPage = (LoginPage) homePage.navigateMenu(MenuRailway.LOGIN);
+		Account account = new Account(Constant.USERNAME, Constant.PASSWORD);
+		loginPage.login(account);
+		
+		System.out.println("3. Book a ticket");
+		
+		BookTicketPage bookTicketPage = (BookTicketPage) homePage.navigateMenu(MenuRailway.BOOK_TICKET);
+		String departDate = UtilsDate.getFutureDate(5);
+		TicketDepart depart = TicketDepart.NHATRANG;
+		TicketDepart departFrom = TicketDepart.HUE;
+		TicketSeatType typeSeat = TicketSeatType.SOFT_BED_AIR ;
+		String amount = "1";
+//		departDate -> TicketDepart -> TicketDepart from  -> TicketSeatType  ->	TicketAmount 
+		bookTicketPage.bookTicket(departDate, depart , departFrom, typeSeat , amount);
+
+		System.out.println("4. Click on \"My ticket\" tab");
+		MyTicketPage myTicketPage = (MyTicketPage) homePage.navigateMenu(MenuRailway.MY_TICKET);
+		System.out.println("5. Click on \"Cancel\" button of ticket which user want to cancel.");
+		System.out.println("6. Click on \"OK\" button on Confirmation message \"Are you sure?\"");
+		myTicketPage = new MyTicketPage();
+		String NewestTicketNumBer = "1";
+		myTicketPage.ClickCancelTicket(NewestTicketNumBer);
+		System.out.println("verify: The canceled ticket is disappeared.");
+		Assert.assertEquals(myTicketPage.checkCancelTicketIsVisible(NewestTicketNumBer), expected, "The canceled ticket is disappeared.");
+		
+	}
 	
 }

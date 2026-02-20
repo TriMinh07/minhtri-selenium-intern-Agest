@@ -1,3 +1,5 @@
+
+
 package Railway;
 
 import Constant.Constant;
@@ -9,7 +11,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import Account.Account;
-import Common.Utilities;
+import Constant.Constant;
 
 public class LoginTest extends BaseTest {
 	
@@ -46,7 +48,7 @@ public class LoginTest extends BaseTest {
 		
 		System.out.println("3. User doesn't type any words into \"Username\" textbox but enter valid information into \"Password\" textbox");
 		System.out.println("4. Click on \"Login\" button");
-		Account account = new Account(Constant.USERNAME , Constant.PASSWORD);
+		Account account = new Account(Constant.USERNAME , Constant.INVALID_PASSWORD);
 		loginPage.login(account);
 		
 		System.out.println("User can't login and message \"There was a problem with your login and/or errors exist in your form. \" appears.");

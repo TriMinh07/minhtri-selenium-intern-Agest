@@ -10,6 +10,7 @@ import Railway.RegisterPage;
 import Railway.TicketPricePage;
 import Railway.ContactPage;
 import Railway.LogoutPage;
+import Railway.MyTicketPage;
 import Railway.BookTicketPage;
 
 
@@ -24,7 +25,8 @@ public enum MenuRailway {
     BOOK_TICKET("Book ticket", BookTicketPage.class),
     REGISTER("Register", RegisterPage.class),
     LOGIN("Login", LoginPage.class),
-	CHANGE_PASSWORD("Change password", ChangePasswordPage.class);
+	CHANGE_PASSWORD("Change password", ChangePasswordPage.class),
+	MY_TICKET ("My ticket" , MyTicketPage.class );
 
     private final String displayText;
     private final Class<? extends GeneralPage> pageClass;
