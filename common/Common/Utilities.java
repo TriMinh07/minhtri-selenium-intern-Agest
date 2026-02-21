@@ -178,4 +178,28 @@ public class Utilities {
             }
         });
     }
+    
+    public static WebElement waitForElementWithRefresh(By locator, int timeoutInSeconds, int maxRetries) {
+        int attempts = 0;
+        while (attempts < maxRetries) {
+            try {
+                WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Duration.ofSeconds(timeoutInSeconds));
+                return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+            } catch (Exception e) {
+                attempts++;
+                System.out.println("Thử lại lần " + attempts + ": Refresh trang vì không tìm thấy " + locator.toString());
+                Constant.WEBDRIVER.navigate().refresh();
+                hardWait(3); 
+            }
+        }
+        throw new RuntimeException("LỖI: Đã thử " + maxRetries + " lần nhưng vẫn không thấy phần tử: " + locator.toString());
+    }
+
+    public static void hardWait(int seconds) {
+        try {
+            Thread.sleep(seconds * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }

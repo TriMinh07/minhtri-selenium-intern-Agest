@@ -3,6 +3,7 @@ package Railway;
 import org.openqa.selenium.By;
 
 import Common.Utilities;
+import Constant.Constant;
 
 public class ChangePasswordPage extends GeneralPage {
 	// locators
@@ -55,6 +56,11 @@ public class ChangePasswordPage extends GeneralPage {
 	
 	public String getLbInvalidConfirmPassErrorMsg () {
 		return Utilities.getArtribute(lbInvalidConfirmPassErrorMsg, "textContent");
+	}
+	
+	public void openResetLink(String link) {
+	    WindowManager.switchToTab(Constant.WINDOW_TAB_RAILWAY); 
+	    Constant.WEBDRIVER.get(link); 
 	}
 	
 }

@@ -29,4 +29,9 @@ public class HomePage extends GeneralPage {
 		return new HomePage();
 	}
 	
+	public void SwitchToNewTabRailway() {
+		WindowManager.newTab(Constant.WINDOW_TAB_RAILWAY);
+		Utilities.getUrl(Constant.RAILWAY_ULR);
+	}
+	
 }

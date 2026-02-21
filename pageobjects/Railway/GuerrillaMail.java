@@ -12,7 +12,7 @@ public class Guerrillamail {
 	private final By btnSetNameEmailBy = By.xpath("//button[text()='Set']");
 	private final By lbEmailBy = By.xpath("//span[@id='email-widget']");
 	private final By checkAliasBy = By.xpath("//input[@id='use-alias']");
-	private final By boxEmailConfirmAccountBy = By.xpath("//td[contains(text(), 'Please confirm your account')]"); 
+	private final By boxEmailConfirmAccountBy = By.xpath("//tr[contains(@class, 'mail_row')]//a[contains(., 'Please confirm')]"); 
 	private final By linkActiveAccountBy = By.xpath("//div[@class='email_body']/a");
 	private final By boxEmailResetPasswordBy = By.xpath("//td[contains(text(),'Please reset your password')]");
 	private final By linkActiveResetPasswordBy = By.xpath("//div[@class='email_body']/a");
@@ -36,11 +36,20 @@ public class Guerrillamail {
 	}
 	
 	public String getLinkActive() {
+		Utilities.waitForElementWithRefresh(boxEmailConfirmAccountBy, 10, 5); 
 		Utilities.clickByJS(this.boxEmailConfirmAccountBy);
 		return Utilities.getArtribute(this.linkActiveAccountBy, "href");
 	}
 	
+	public RegisterPage ClickLinkActive() {
+		String linkActive = getLinkActive();
+		Utilities.getUrl(linkActive);
+		return new RegisterPage();
+	}
+	
 	public String getLinkResetPassword() {
+		Utilities.refreshWindow();
+		
 		Utilities.clickByJS(this.boxEmailResetPasswordBy);
 		return Utilities.getArtribute(this.linkActiveResetPasswordBy, "href");
 	}
@@ -49,12 +58,9 @@ public class Guerrillamail {
 		Constant.WEBDRIVER.navigate().to(Constant.MAIL_ULR);
 		WindowManager.saveWindow(Constant.WINDOW_TAB_MAIL, Constant.WEBDRIVER);
 		return this;
-	}///
-	
-	private Guerrillamail clickLinkActive() {
-		Utilities.clickByJS(this.boxEmailConfirmAccountBy);
-		Utilities.click(linkActiveAccountBy);
-		return new Guerrillamail();
 	}
 	
+	public void switchToMailTab() {
+	    WindowManager.switchToTab(Constant.WINDOW_TAB_MAIL);
+	}
 }

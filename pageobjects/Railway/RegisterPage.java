@@ -71,4 +71,9 @@ public class RegisterPage extends GeneralPage {
 	public String getRegisterConfirm() {
 		return Utilities.getArtribute(lbRegistrationConfirm, "textContent");
 	}
+	
+	public void activateAccount(String link) {
+	    WindowManager.switchToTab(Constant.WINDOW_TAB_RAILWAY);
+	    Constant.WEBDRIVER.get(link);
+	}
 }
