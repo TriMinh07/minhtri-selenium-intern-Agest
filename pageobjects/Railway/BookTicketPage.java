@@ -35,10 +35,11 @@ public class BookTicketPage extends GeneralPage {
 		Select selectSeatType = new Select(Utilities.getElement(this.seSeatType));
 		Select selectTicketAmount = new Select(Utilities.getElement(this.seTicketAmount));
 		
-		System.out.println(departDate);
+
 		selectDepartDate.selectByContainsVisibleText(departDate);
 		selectDepartForm.selectByValue(departForm.getValue());
 		selectArriveAt.selectByValue(arriveAt.getValue());
+		System.out.println("2");
 		selectSeatType.selectByValue(seatType.getValue());
 		selectTicketAmount.selectByValue(ticketAmount);
 

@@ -23,7 +23,6 @@ public class TicketPricePage extends GeneralPage {
 	
 	public String getCellTicketPrice(TicketSeatType miniName) {
 		By xpath = By.xpath(String.format(this.cellValue, miniName.getMiniName()));
-		System.out.println(xpath);
 		return Utilities.getText(xpath);
 	}
 	

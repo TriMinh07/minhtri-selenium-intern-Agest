@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="2" passed="0" failed="1" skipped="0">
+<testng-results ignored="4" total="5" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-21T22:08:57 ICT" name="Default suite" finished-at="2026-02-21T22:10:22 ICT" duration-ms="84946">
+  <suite started-at="2026-02-23T14:24:02 ICT" name="Default suite" finished-at="2026-02-23T14:24:09 ICT" duration-ms="6962">
     <groups>
     </groups>
-    <test started-at="2026-02-21T22:08:57 ICT" name="Default test" finished-at="2026-02-21T22:10:22 ICT" duration-ms="84946">
-      <class name="Railway.ResetPasswordTest">
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.ResetPasswordTest@40a4337a]" started-at="2026-02-21T22:08:57 ICT" name="beforeMethod" finished-at="2026-02-21T22:09:00 ICT" duration-ms="3438" status="PASS">
+    <test started-at="2026-02-23T14:24:02 ICT" name="Default test" finished-at="2026-02-23T14:24:09 ICT" duration-ms="6962">
+      <class name="Railway.BookTicket">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.BookTicket@2d1ef81a]" started-at="2026-02-23T14:24:02 ICT" name="beforeMethod" finished-at="2026-02-23T14:24:03 ICT" duration-ms="1176" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,31 +18,25 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC10()[pri:0, instance:Railway.ResetPasswordTest@40a4337a]" started-at="2026-02-21T22:09:00 ICT" name="TC10" finished-at="2026-02-21T22:10:22 ICT" duration-ms="81479" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
+        <test-method signature="TC13()[pri:0, instance:Railway.BookTicket@2d1ef81a]" started-at="2026-02-23T14:24:03 ICT" name="TC13" finished-at="2026-02-23T14:24:09 ICT" duration-ms="5761" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[Expected condition failed: waiting for visibility of element found by By.xpath: //span[@id='inbox-id'], but... org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[@id='inbox-id']"}.
-(tried for 20 seconds with 500 milliseconds interval)
+              <![CDATA[Cannot locate option with value: 1
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
 Build info: version: '4.40.0', revision: 'b3333f1'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.109, chrome: {chromedriverVersion: 145.0.7632.77 (da516187054a..., userDataDir: C:\Users\MINHTR~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64439}, goog:processID: 28544, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64439/devtoo..., se:cdpVersion: 145.0.7632.109, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: c67b5748463d7499c1e5c64bc93ea027]]>
+Driver info: driver.version: unknown]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by By.xpath: //span[@id='inbox-id'], but... org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[@id='inbox-id']"}.
-(tried for 20 seconds with 500 milliseconds interval)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Cannot locate option with value: 1
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
 Build info: version: '4.40.0', revision: 'b3333f1'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.109, chrome: {chromedriverVersion: 145.0.7632.77 (da516187054a..., userDataDir: C:\Users\MINHTR~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64439}, goog:processID: 28544, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64439/devtoo..., se:cdpVersion: 145.0.7632.109, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: c67b5748463d7499c1e5c64bc93ea027
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-at Common.Utilities.waitForVisible(Utilities.java:47)
-at Common.Utilities.clickByJS(Utilities.java:130)
-at Railway.Guerrillamail.setGuerrillaMail(Guerrillamail.java:24)
-at Railway.ResetPasswordTest.TC10(ResetPasswordTest.java:20)
+Driver info: driver.version: unknown
+at org.openqa.selenium.support.ui.Select.findOptionsByValue(Select.java:307)
+at org.openqa.selenium.support.ui.Select.selectByValue(Select.java:191)
+at Railway.BookTicketPage.bookTicket(BookTicketPage.java:41)
+at Railway.BookTicket.TC13(BookTicket.java:92)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -71,15 +65,15 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC10 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.ResetPasswordTest@40a4337a]" started-at="2026-02-21T22:10:22 ICT" name="afterMethod" finished-at="2026-02-21T22:10:22 ICT" duration-ms="0" status="PASS">
+        </test-method> <!-- TC13 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.BookTicket@2d1ef81a]" started-at="2026-02-23T14:24:09 ICT" name="afterMethod" finished-at="2026-02-23T14:24:09 ICT" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- Railway.ResetPasswordTest -->
+      </class> <!-- Railway.BookTicket -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

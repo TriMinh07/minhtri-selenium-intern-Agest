@@ -60,8 +60,8 @@ public class RegisterTest extends BaseTest {
 		
 		System.out.println("3. Enter valid email address and leave other fields empty");
 		System.out.println("4. Click on \"Register\" button");
-		System.out.println(
-				"Message \"There're errors in the form. Please correct the errors and try again.\" appears above the form.");
+		System.out.println("Message \"There're errors in the form. "
+				+ "Please correct the errors and try again.\" appears above the form.");
 		registerPage.registerByAccount(account);
 
 		String registerErrMsg = registerPage.getErrorMessage();
@@ -108,20 +108,21 @@ public class RegisterTest extends BaseTest {
 		System.out.println("4. Click on \"Register\" button");
 		reregisterPage.registerByAccount(account);
 
-		System.out.println(
-				"5. Get email information (webmail address, mailbox and password) and navigate to that webmail ");
+		System.out.println("5. Get email information (webmail address, mailbox and password) "
+				+ "and navigate to that webmail ");
 		System.out.println("6. Login to the mailbox");
 		guerrillamail.switchToMailTab();
 		guerrillamail.setGuerrillaMail(account.getEmail());
 
 		
 		System.out.println(
-				"7. Open email with subject containing \"Please confirm your account\" and the email of the new account at step 3");
+				"7. Open email with subject containing \"Please confirm your account\" "
+				+ "and the email of the new account at step 3");
 		System.out.println("8. Click on the activate link");
 		guerrillamail.getLinkActive();
 		guerrillamail.ClickLinkActive();
-		System.out.println(
-				"Verify: That Redirect to Railways page and message \"Registration Confirmed! You can now log in to the site.\" is shown");
+		System.out.println("Verify: That Redirect to Railways page and message"
+				+ " \"Registration Confirmed! You can now log in to the site.\" is shown");
 		String expectedMsg = "Registration Confirmed! You can now log in to the site.";
 		String acualMSg = reregisterPage.getRegisterConfirm();
 		Assert.assertEquals(acualMSg, expectedMsg, "Registration Confirmed is shown");
